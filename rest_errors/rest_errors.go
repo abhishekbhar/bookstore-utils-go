@@ -16,6 +16,14 @@ func NewError(msg string) error {
 }
 
 
+func NewRestError(message string, status int, err string) *RestErr {
+	return &RestErr{
+		Message: message,
+		Status: status,
+		Error: err,
+	}
+}
+
 func NewBadRequestError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
